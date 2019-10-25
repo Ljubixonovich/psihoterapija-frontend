@@ -1,0 +1,3 @@
+git remote add origin https://github.com/Ljubixonovich/jasna-sajt-psihoterapija.git
+
+heroku git:remote -a psihoterapija

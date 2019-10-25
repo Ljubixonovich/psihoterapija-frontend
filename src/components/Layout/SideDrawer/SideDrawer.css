@@ -1,0 +1,7 @@
+.SideDrawerOpen {
+   transform: translateX(0);
+}
+
+.SideDrawerClose {
+   transform: translateX(-100%);
+}
