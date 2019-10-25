@@ -4,10 +4,10 @@ import { Header } from './Header/Header';
 import { SideDrawer } from './SideDrawer/SideDrawer';
 import { Footer } from './Footer/Footer';
 
-const LaoyoutWrapper = styled.div`
+const LayoutWrapper = styled.div`
    display: grid;
    grid-template-columns: repeat(12, 1fr);
-   grid-template-rows: 100px auto 100px;
+   grid-template-rows: 64px auto 100px;
    grid-template-areas: 
       'h h h h h h h h h h h h'
       'p p p p p p p p p p p p'
@@ -49,22 +49,24 @@ const Layout = (props) => {
    }
 
    return (
-      <LaoyoutWrapper>
-         <Header            
-            drawerToggleClicked={sideDrawerToggleHandler}
-         />
+      <>
+         <LayoutWrapper>
+            <Header
+               drawerToggleClicked={sideDrawerToggleHandler}
+            />
 
-         <PageContainer>
-            <main>{props.children}</main>
-         </PageContainer>
+            <PageContainer>
+               <main>{props.children}</main>
+            </PageContainer>
 
-         <Footer />
+            <Footer />
+         </LayoutWrapper>
 
          <SideDrawer
             onCloseDrawer={sideDrawerClosedHandler}
             sideDrawerIsOpen={sideDrawerVisible}
          />
-      </LaoyoutWrapper>
+      </>
    );
 
 }

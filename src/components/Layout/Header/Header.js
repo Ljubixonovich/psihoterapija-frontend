@@ -31,6 +31,18 @@ const Wrapper = styled.div`
       '. . h h h h h h h h . .'
       ;
    }
+
+   .Nav {
+      display: none;
+
+      @media (min-width: 992px) {
+         display: flex;
+
+         p {
+            margin: 0 10px;
+         }
+      }
+   }
 `;
 
 const HeaderWrapper = styled.div`    
@@ -44,12 +56,15 @@ const HeaderWrapper = styled.div`
 
 export const Header = (props) => (
    <Wrapper>
-      <HeaderWrapper {...props}>
+      <HeaderWrapper>
          <Logo />
 
-         {/* <StyledNav>
-            <NavigationItems />
-         </StyledNav> */}
+         <div className='Nav'>
+            {/* <NavigationItems /> */}
+            <p>asd</p>
+            <p>asd</p>
+            <p>asd</p>
+         </div>
 
 
          {props.isModal ?
