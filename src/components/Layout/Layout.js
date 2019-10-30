@@ -33,7 +33,7 @@ const LayoutWrapper = styled.div`
 
 const PageContainer = styled.div`
    grid-area: p;
-   padding: 0px 16px;
+   padding: 0px 10px;
 `;
 
 

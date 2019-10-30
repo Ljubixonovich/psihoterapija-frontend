@@ -1,9 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-// import {Colors} from '../../../utils/constants';
+import image from '../../../assets/images/boje_u_sivom.jpg';
 
 const Wrapper = styled.div`
-   background-color: red;
+   background-image: url(${image});
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center; 
    grid-area: f;
    display: grid;
    grid-template-columns: repeat(12, 1fr);

@@ -3,9 +3,13 @@ import styled from 'styled-components';
 import { Logo } from '../../Logo/Logo';
 import { DrawerToggle } from '../SideDrawer/DrawerToggle/DrawerToggle';
 import { CloseBtn } from '../SideDrawer/CloseBtn/CloseBtn';
+import image from '../../../assets/images/boje_u_sivom.jpg';
 
 const Wrapper = styled.div`
-   background-color: red;
+   background-image: url(${image});
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center;   
    height: 64px;
    width: 100%;
    position: fixed;
