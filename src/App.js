@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Practise from './pages/Practise';
 import NotFound from './pages/NotFound';
+import Contact from './pages/Contact';
 import Layout from './components/Layout';
 
 
@@ -14,6 +15,7 @@ const App = (props) => {
          <Route path='/' exact component={Home} />
          <Route path='/about' component={About} />
          <Route path='/practise' component={Practise} />
+         <Route path='/contact' component={Contact} />
          <Route component={NotFound} />
       </Switch>
    );

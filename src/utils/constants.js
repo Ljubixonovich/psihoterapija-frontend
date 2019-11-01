@@ -10,7 +10,16 @@ export const Colors = {
 }
 
 export const Links = [
-   "",
-   "texts",
-   "about",
+   {
+      title: 'Home',
+      link: ''
+   },
+   {
+      title: 'About me',
+      link: 'about'
+   },
+   {
+      title: 'Contact',
+      link: 'contact'
+   }
 ]

@@ -1,5 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+
+import { NavItems } from '../NavItems/NavItems';
 import { Logo } from '../../Logo/Logo';
 import { DrawerToggle } from '../SideDrawer/DrawerToggle/DrawerToggle';
 import { CloseBtn } from '../SideDrawer/CloseBtn/CloseBtn';
@@ -25,6 +27,12 @@ const Wrapper = styled.div`
    ; 
 
    @media (min-width: 992px) {
+      grid-template-areas: 
+      '. h h h h h h h h h h h'
+      ;
+   }
+
+   @media (min-width: 1200px) {
       grid-template-areas: 
       '. h h h h h h h h h h .'
       ;
@@ -63,20 +71,18 @@ export const Header = (props) => (
       <HeaderWrapper>
          <Logo />
 
-         <div className='Nav'>
-            {/* <NavigationItems /> */}
-            <p>asd</p>
-            <p>asd</p>
-            <p>asd</p>
+         <div>
+            <div className='Nav'>
+               <NavItems />
+            </div>
+
+            {props.isModal ?
+               <CloseBtn onClick={props.onCloseDrawer} /> :
+               <DrawerToggle
+                  onClick={props.drawerToggleClicked}
+               />
+            }
          </div>
-
-
-         {props.isModal ?
-            <CloseBtn onClick={props.onCloseDrawer} /> :
-            <DrawerToggle
-               onClick={props.drawerToggleClicked}
-            />
-         }
 
       </HeaderWrapper>
    </Wrapper>

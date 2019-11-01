@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-// import { Colors } from '../../utils/constants';
 
 const Text = styled.span`
     color: black;
@@ -14,7 +13,7 @@ const Text = styled.span`
     font-style: ${props => props.italic ? 'italic' : 'normal'};
 
     @media (min-width: 992px) {
-        font-size: 30px;
+        font-size: 28px;
         text-align: left;
     }
 `;

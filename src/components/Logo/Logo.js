@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 import { Heading } from '../../components/Heading/Heading';
 import styled from 'styled-components';
 
@@ -17,8 +19,10 @@ const Space = styled.span`
 
 export const Logo = (props) => (
    <Wrapper>
-      <Heading noTextAlign>Psihoterapija</Heading> 
-      <Space width='16px' />
-      <Heading noTextAlign italic>Jasna Amroš-Vukelić</Heading>
+       <NavLink to='/' >  
+         <Heading noTextAlign>Psihoterapija</Heading> 
+         <Space width='16px' />
+         <Heading noTextAlign italic>Jasna Amroš-Vukelić</Heading>
+      </NavLink>
    </Wrapper>
 )

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Header } from '../Header/Header';
+import { NavItems } from '../NavItems/NavItems';
 import { Backdrop } from '../../Backdrop/Backdrop';
 import { Btn } from '../../Btn/Btn';
 import './SideDrawer.css';
@@ -57,12 +58,9 @@ export const SideDrawer = (props) => {
                />
 
                <div className='Nav'>
-                  {/* <NavigationItems /> */}
-                  <p>asd</p>
-                  <p>asd</p>
-                  <p>asd</p>
+                  <NavItems onClick={props.onCloseDrawer}/>
 
-                  <Btn>Zakazi</Btn>
+                  <Btn className='Center'>Zakazi</Btn>
                </div>
             </GridWrapper>
          </ModalWrapper>
