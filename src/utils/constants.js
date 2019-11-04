@@ -7,7 +7,7 @@ export const Colors = {
    yellowLight: "#f8ad00",
    grayLight: "rgba(216,216,216,0.2)",
    main: ""
-}
+};
 
 export const Links = [
    {
@@ -22,4 +22,10 @@ export const Links = [
       title: 'Contact',
       link: 'contact'
    }
-]
+];
+
+export const PersonalData = {
+   name: 'Jasna Amroš-Vukelić',
+   email: 'j.amros.vukelic@gmail.com',
+   phone: '+381638737067'
+};

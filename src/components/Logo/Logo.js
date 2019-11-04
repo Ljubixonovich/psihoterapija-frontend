@@ -4,6 +4,8 @@ import { NavLink } from 'react-router-dom';
 import { Heading } from '../../components/Heading/Heading';
 import styled from 'styled-components';
 
+import { PersonalData } from '../../utils/constants';
+
 const Wrapper = styled.div`
    display: flex;
    flex-direction: column;
@@ -22,7 +24,7 @@ export const Logo = (props) => (
        <NavLink to='/' >  
          <Heading noTextAlign>Psihoterapija</Heading> 
          <Space width='16px' />
-         <Heading noTextAlign italic>Jasna Amroš-Vukelić</Heading>
+         <Heading noTextAlign italic>{PersonalData.name}</Heading>
       </NavLink>
    </Wrapper>
 )
