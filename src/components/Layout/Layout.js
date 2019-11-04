@@ -5,6 +5,7 @@ import { SideDrawer } from './SideDrawer/SideDrawer';
 import { Footer } from './Footer/Footer';
 
 const LayoutWrapper = styled.div`
+   min-height: 100%;
    display: grid;
    grid-template-columns: repeat(12, 1fr);
    grid-template-rows: 64px auto 100px;

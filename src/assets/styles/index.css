@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900&display=swap');
 
+html {
+   height: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+#root {
+   height: 100%;
 }
 
 .Inline {
@@ -22,4 +31,9 @@ body {
 
 a {
    text-decoration: none;
+}
+
+.Invalid {
+   border: 1px solid red;
+   background-color: #FDA49A;
 }

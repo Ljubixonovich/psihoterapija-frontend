@@ -1,19 +1,14 @@
 import React from 'react';
 
-import { PersonalData } from '../../utils/constants';
+import { SendMailForm } from '../../components/SendMailForm/SendMailForm';
+import { ContactInfo } from '../../components/ContactInfo/ContactInfo';
 
-const Contact = () => (
+
+const Contact = (props) => (
    <>
-   <h1>Contact Info</h1>
-   <label>mobile/viber: </label>
-   <span>{PersonalData.phone}</span>
-   <br />
+      <ContactInfo />       
 
-   <label>mail: </label>
-   <span>{PersonalData.email}</span>
-   <br />
-
-   
+      <SendMailForm />
    </>
 )
 
