@@ -7,7 +7,11 @@ const FormWrapper = styled.div`
    box-sizing: border-box;
    padding: 20px 0;
 
-   p:first-of-type {
+   p, div:first-of-type {
+      font-style: italic; 
+      text-align: center; 
+   }
+   p, div:nth-child(2) {
       font-style: italic; 
       text-align: center; 
    }
@@ -44,7 +48,7 @@ const FormWrapper = styled.div`
          
          :focus {
             outline: none;
-            background-color: #eee;
+            background-color: #f7f7f7;
          }
       }
    }
@@ -53,7 +57,12 @@ const FormWrapper = styled.div`
 
 export const SendMailForm = (props) => (
    <FormWrapper>
-      <p>Leave your messsage here, and also your email if you want response. I will shortly replay to your message.</p>
+      {/* <p>Leave your messsage and I will shortly replay to you.</p>
+      <p>Email is required only if you want my response</p> */}
+      <div>Leave your messsage and I will shortly replay to you.</div>
+      <div>E-mail is required only if you want my response.</div>
+      <br />
+
 
       <div className='Form'>
          <div className='InputWrapper'>

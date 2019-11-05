@@ -18,7 +18,7 @@ const ModalWrapper = styled.div`
    z-index: 200;
    background-color: white;
    box-sizing: border-box;
-   transition: transform 0.3s ease-out;    
+   transition: transform 0.35s ease-out;    
    @media (min-width: 992px) {
       display: none;
    }
