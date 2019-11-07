@@ -66,7 +66,7 @@ const FormWrapper = styled.div`
 
 `;
 
-export const SendMailForm = (props) => {   
+export const SendMailForm = (props) => {
    let content;
    const [formState, setFormState] = useState('form');
 
@@ -78,13 +78,19 @@ export const SendMailForm = (props) => {
       const message = inputMessage.current.value || 'prazna poruka';
 
       let response = await sendMessageToEmail(email, message);
-      response.json()
-      .then(res => {
-         setFormState('success')
-      })
-      .catch(err => {
+      if (response) {
+         response.json()
+            .then(res => {
+               setFormState('success')
+            })
+            .catch(err => {
+               setFormState('error');
+            });
+      } else {
          setFormState('error');
-      });
+      }
+
+
    };
 
    const onTryAgain = () => {
@@ -95,36 +101,36 @@ export const SendMailForm = (props) => {
       case 'form':
          content = (
             <FormWrapper>
-            <div>Leave your messsage and I will replay to you shortly.</div>
-            <div>E-mail is required only if you want my response.</div>
-            <br />   
-   
-            <div className='Form'>
-               <div className='InputWrapper'>
-                  <label>e-mail:</label>
-                  <input
-                     className='InputElement'
-                     type='text'
-                     ref={inputEmail}
-                  />
+               <div>Leave your messsage and I will replay to you shortly.</div>
+               <div>E-mail is required only if you want my response.</div>
+               <br />
+
+               <div className='Form'>
+                  <div className='InputWrapper'>
+                     <label>e-mail:</label>
+                     <input
+                        className='InputElement'
+                        type='text'
+                        ref={inputEmail}
+                     />
+                  </div>
+
+                  <div className='InputWrapper'>
+                     <label>message:</label>
+                     <textarea
+                        className='InputElement'
+                        rows="10"
+                        spellCheck="false"
+                        ref={inputMessage}
+                     />
+                  </div>
+
+                  <Btn
+                     className='Center'
+                     onClick={onSendMessage}
+                  >Send</Btn>
+
                </div>
-   
-               <div className='InputWrapper'>
-                  <label>message:</label>
-                  <textarea
-                     className='InputElement'
-                     rows="10"
-                     spellCheck="false"
-                     ref={inputMessage}
-                  />
-               </div>
-   
-               <Btn
-                  className='Center'
-                  onClick={onSendMessage}
-               >Send</Btn>
-   
-            </div>
             </FormWrapper>
          );
          break;
@@ -143,12 +149,12 @@ export const SendMailForm = (props) => {
 
 
       default:
-            content = (
-               <Response display='false'>
-                  <h3 className='Center'>Your message was successfully sent.</h3>
-                  <h3 className='Center'>I will replay to you shortly.</h3>
-               </Response>
-            )
+         content = (
+            <Response display='false'>
+               <h3 className='Center'>Your message was successfully sent.</h3>
+               <h3 className='Center'>I will replay to you shortly.</h3>
+            </Response>
+         )
          break;
    }
 
