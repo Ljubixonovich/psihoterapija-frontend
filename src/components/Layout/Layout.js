@@ -8,7 +8,7 @@ const LayoutWrapper = styled.div`
    min-height: 100%;
    display: grid;
    grid-template-columns: repeat(12, 1fr);
-   grid-template-rows: 64px auto 100px;
+   grid-template-rows: 64px auto 64px;
    grid-template-areas: 
       'h h h h h h h h h h h h'
       'p p p p p p p p p p p p'

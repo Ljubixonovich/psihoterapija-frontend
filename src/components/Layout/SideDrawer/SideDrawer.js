@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 import { Header } from '../Header/Header';
 import { NavItems } from '../NavItems/NavItems';
@@ -60,7 +61,17 @@ export const SideDrawer = (props) => {
                <div className='Nav'>
                   <NavItems onClick={props.onCloseDrawer}/>
 
-                  <Btn className='Center'>Zakazi</Btn>
+                  <NavLink
+                     to={{
+                        pathname:'contact',
+                        aboutProps: {
+                           hideContactInfo: true
+                        }
+                     }}
+                     onClick={props.onCloseDrawer}
+                  > 
+                     <Btn className='Center'>Zakazi</Btn>
+                  </NavLink>
                </div>
             </GridWrapper>
          </ModalWrapper>
