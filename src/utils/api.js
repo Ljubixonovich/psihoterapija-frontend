@@ -1,3 +1,7 @@
+const url =  process.env.NODE_ENV === 'production' ? 
+   'https://psihoterapija-backend.herokuapp.com/' : 
+   'http://localhost:8000';
+
 
 export const sendMessageToEmail = async (emailFrom, message) => {
    try {
@@ -6,7 +10,7 @@ export const sendMessageToEmail = async (emailFrom, message) => {
       formData.append('message', message);
       // console.log(formData);
       
-      let response = await fetch('http://localhost:8000', {
+      let response = await fetch(url, {
          method: 'POST',
          headers: {
             'Accept': 'application/json',
@@ -25,7 +29,7 @@ export const sendMessageToEmail = async (emailFrom, message) => {
 
 export const awakeBackend = async () => {
    try {
-      fetch('http://localhost:8000');
+      fetch(url);
    } catch(err) {
       console.log(err);
    }
@@ -34,7 +38,7 @@ export const awakeBackend = async () => {
 export const getPersonsAsync = async () => {
    try {
       // let persons = await fetch('https://persons-vezba.herokuapp.com/');
-      let persons = await fetch('http://localhost:8000');
+      let persons = await fetch(url);
       persons = await persons.json();
       return persons;
    } catch(err) {

@@ -74,7 +74,7 @@ export const SendMailForm = (props) => {
    const inputMessage = useRef(null);
 
    const onSendMessage = async () => {
-      const email = inputEmail.current.value || 'prazni email';
+      const email = inputEmail.current.value || '';
       const message = inputMessage.current.value || 'prazna poruka';
 
       let response = await sendMessageToEmail(email, message);
