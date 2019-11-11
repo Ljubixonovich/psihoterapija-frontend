@@ -1,7 +1,6 @@
-const url =  process.env.NODE_ENV === 'production' ? 
-   'https://psihoterapija-backend.herokuapp.com/' : 
-   'http://localhost:8000';
-
+const url =  
+   'https://psihoterapija-backend.herokuapp.com/'; 
+   // 'http://localhost:8000';
 
 export const sendMessageToEmail = async (emailFrom, message) => {
    try {
