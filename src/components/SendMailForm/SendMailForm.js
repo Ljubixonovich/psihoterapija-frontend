@@ -101,7 +101,7 @@ export const SendMailForm = (props) => {
       case 'form':
          content = (
             <FormWrapper>
-               <div>Leave your messsage and I will replay to you shortly.</div>
+               <div>Leave your messsage and I will reply to you shortly.</div>
                <div>E-mail is required only if you want my response.</div>
                <br />
 
@@ -152,7 +152,7 @@ export const SendMailForm = (props) => {
          content = (
             <Response display='false'>
                <h3 className='Center'>Your message was successfully sent.</h3>
-               <h3 className='Center'>I will replay to you shortly.</h3>
+               <h3 className='Center'>I will reply to you shortly.</h3>
             </Response>
          )
          break;
