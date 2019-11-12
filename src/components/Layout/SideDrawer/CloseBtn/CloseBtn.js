@@ -1,9 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Colors } from '../../../../utils/constants';
 
 const StyledBtn = styled.div` 
    cursor: pointer;
    display: inline;
+
+   :hover {
+      span {
+         background-color: ${Colors.teal};
+      }
+   }
 
    span {
       display: block;

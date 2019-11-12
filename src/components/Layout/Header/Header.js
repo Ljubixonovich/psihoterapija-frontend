@@ -26,11 +26,11 @@ const Wrapper = styled.div`
       'h h h h h h h h h h h h'
    ; 
 
-   @media (min-width: 992px) {
+   /* @media (min-width: 992px) {
       grid-template-areas: 
       '. h h h h h h h h h h h'
       ;
-   }
+   } */
 
    @media (min-width: 1200px) {
       grid-template-areas: 

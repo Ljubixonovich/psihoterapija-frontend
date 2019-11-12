@@ -9,7 +9,7 @@ const Li = styled.li`
    box-sizing: border-box;
    display: block;
    width: 100%;
-   font-size: 26px;
+   font-size: 24px;
    
    a {
       color: ${Colors.teal};

@@ -15,8 +15,21 @@ export const Links = [
       link: ''
    },
    {
-      title: 'About me',
+      // title: 'Kako vam mogu pomoći',
+      title: 'Pomoć',
+      link: 'help'
+   },
+   {
+      title: 'O meni',
       link: 'about'
+   },
+   {
+      title: 'Recnik pojmova',
+      link: 'dictionary'
+   },
+   {
+      title: 'Blog',
+      link: 'blog'
    },
    {
       title: 'Contact',
