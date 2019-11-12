@@ -31,11 +31,12 @@ const Li = styled.li`
       display: flex;
       align-items: center;
       height: 100%;
-      width: auto;
+      /* width: auto; */
+      width: 116px;
       
       a {
          height: 100%;
-         padding: 16px 10px;
+         padding: 0px 10px;
          border-bottom: 4px solid transparent;         
       }
    
