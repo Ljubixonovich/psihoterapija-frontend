@@ -37,6 +37,10 @@ body {
    justify-content: center;
 }
 
+.Capitalize {
+   text-transform: capitalize;
+}
+
 a {
    text-decoration: none;
 }

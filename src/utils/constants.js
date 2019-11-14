@@ -38,7 +38,6 @@ export const Links = [
 ];
 
 export const PersonalData = {
-   name: 'Jasna Amroš-Vukelić',
    email: 'j.amros.vukelic@gmail.com',
    phone: '+381638737067'
 };
