@@ -1,10 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-
-import { Heading } from '../../components/Heading/Heading';
 import styled from 'styled-components';
 
-import { PersonalData } from '../../utils/constants';
+import { Heading } from '../../components/Heading/Heading';
+import { localize } from '../../utils/translations';
 
 const Wrapper = styled.div`
    display: flex;
@@ -23,9 +22,9 @@ const Space = styled.span`
 export const Logo = (props) => (
    <Wrapper>
        <NavLink to='/' >  
-         <Heading noTextAlign>Psihoterapija</Heading> 
+         <Heading noTextAlign className='Capitalize'>{localize('psychotherapy')}</Heading> 
          <Space width='16px' />
-         <Heading noTextAlign italic>{PersonalData.name}</Heading>
+         <Heading>{localize('jasna')}</Heading>
       </NavLink>
    </Wrapper>
 )
