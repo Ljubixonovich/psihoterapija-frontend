@@ -11,28 +11,28 @@ export const Colors = {
 
 export const Links = [
    {
-      title: 'Home',
+      title: 'home',
       link: ''
    },
    {
       // title: 'Kako vam mogu pomoći',
-      title: 'Pomoć',
+      title: 'help',
       link: 'help'
    },
    {
-      title: 'O meni',
+      title: 'aboutMe',
       link: 'about'
    },
    {
-      title: 'Recnik pojmova',
+      title: 'keyTerms',
       link: 'dictionary'
    },
    {
-      title: 'Blog',
+      title: 'blog',
       link: 'blog'
    },
    {
-      title: 'Contact',
+      title: 'contact',
       link: 'contact'
    }
 ];

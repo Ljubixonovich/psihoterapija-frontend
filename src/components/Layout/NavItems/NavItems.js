@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 
+import { LanguageContext } from '../../../contexts/LanguageContext';
 import { NavItem } from '../NavItem/NavItem';
 import { Links } from '../../../utils/constants';
 
@@ -19,17 +20,20 @@ const Ul = styled.ul`
    }
 `;
 
-export const NavItems = (props) => (
-   <Ul>
-      {Links.map((l, index) => 
-         <NavItem
-            onClick={props.onClick}
-            key={index}
-            link={`/${l.link}`} 
-            exact={l.link === '' ? true : false}        
-         >
-            {l.title}
-         </NavItem>
+export const NavItems = (props) => {
+   const { translations: trans } = useContext(LanguageContext).translations;
+   return (
+      <Ul>
+         {Links.map((l, index) =>
+            <NavItem
+               onClick={props.onClick}
+               key={index}
+               link={`/${l.link}`}
+               exact={l.link === '' ? true : false}
+            >
+               {trans[l.title]}
+            </NavItem>
          )}
-   </Ul>
-);
+      </Ul>
+   );
+}
