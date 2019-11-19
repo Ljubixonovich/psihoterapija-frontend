@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
+import { LanguageContext } from '../../../contexts/LanguageContext';
 import { Header } from '../Header/Header';
 import { NavItems } from '../NavItems/NavItems';
 import LanguagePicker from '../LanguagePicker/LanguagePicker';
@@ -43,6 +44,7 @@ const GridWrapper = styled.div`
 
 
 export const SideDrawer = (props) => {
+   const { translations: trans } = useContext(LanguageContext).translations;
    const drawerClasses = props.sideDrawerIsOpen ?
       "SideDrawerOpen" : "SideDrawerClose";
 
@@ -74,7 +76,7 @@ export const SideDrawer = (props) => {
                      }}
                      onClick={props.onCloseDrawer}
                   > 
-                     <Btn className='Center'>Zakazi</Btn>
+                     <Btn className='Center'>{trans.schedule}</Btn>
                   </NavLink>
                </div>
             </GridWrapper>

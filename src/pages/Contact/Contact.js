@@ -5,7 +5,6 @@ import { ContactInfo } from '../../components/ContactInfo/ContactInfo';
 
 
 const Contact = (props) => {
-
    return (
       <>
       {((props.location.aboutProps && !props.location.aboutProps.hideContactInfo) ||

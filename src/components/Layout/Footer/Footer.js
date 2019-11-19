@@ -37,8 +37,6 @@ const Wrapper = styled.div`
 
 export const Footer = (props) => (
    <Wrapper>
-      <div className='InnerWrapper'>
-      <h1>Footer</h1>
-      </div>
+      <div className='InnerWrapper'></div>
    </Wrapper>
 )
