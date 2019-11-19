@@ -1,4 +1,4 @@
-import { SET_SERBIAN_LANGUAGE, SET_ENGLISH_LANGUAGE} from '../actions';
+import { SET_SERBIAN_LANGUAGE_REDUCER, SET_ENGLISH_LANGUAGE_REDUCER} from '../actions';
 
 const initialState = {
    language: 'en'
@@ -6,13 +6,13 @@ const initialState = {
 
 export const reducer = (state = initialState, action) => {
    switch (action.type) {
-      case SET_SERBIAN_LANGUAGE:
+      case SET_SERBIAN_LANGUAGE_REDUCER:
          return {
             ...state,
             language: 'sr'
          };
 
-      case SET_ENGLISH_LANGUAGE:
+      case SET_ENGLISH_LANGUAGE_REDUCER:
          return {
             ...state,
             language: 'en'

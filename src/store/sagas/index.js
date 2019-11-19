@@ -1,32 +1,28 @@
 import { put, takeLatest } from 'redux-saga/effects';
 
 import { 
-   GET_PERSONS_REDUCER,
-   GET_PERSONS_SAGA,
-   ADD_PERSON_REDUCER,
-   ADD_PERSON_SAGA,
-   DO_SOMETHING
+   DO_SOMETHING,
+   SET_ENGLISH_LANGUAGE_SAGA,
+   SET_SERBIAN_LANGUAGE_SAGA,
+   SET_ENGLISH_LANGUAGE_REDUCER,
+   SET_SERBIAN_LANGUAGE_REDUCER
 } from '../actions';
 
-
-
-function* getPersons() {
+function* setSerbianLanguage() {
    try {
-      yield put({type: GET_PERSONS_REDUCER});
+      yield put({type: SET_SERBIAN_LANGUAGE_REDUCER});
 
    } catch (error) {      
-      console.log('error saga getPersons');
+      console.log('error saga setSerbianLanguage');
    }
 }
 
-function* addPerson(action) {
+function* setEnglishLanguage() {
    try {
-      console.log('addPersonSaga', action);
-      yield put({type: ADD_PERSON_REDUCER, payload: action.payload});
-      console.log('success ?');
-      
-   } catch (error) {
-      console.log('error in addPerson Saga');
+      yield put({type: SET_ENGLISH_LANGUAGE_REDUCER});
+
+   } catch (error) {      
+      console.log('error saga setEnglishLanguage');
    }
 }
 
@@ -37,7 +33,7 @@ function* doSomething() {
 }
 
 export default function* rootSaga() {
-   yield takeLatest(GET_PERSONS_SAGA, getPersons);
-   yield takeLatest(ADD_PERSON_SAGA, addPerson);
    yield takeLatest(DO_SOMETHING, doSomething);
+   yield takeLatest(SET_ENGLISH_LANGUAGE_SAGA, setEnglishLanguage);
+   yield takeLatest(SET_SERBIAN_LANGUAGE_SAGA, setSerbianLanguage);
 }

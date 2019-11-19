@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 
-import { SET_ENGLISH_LANGUAGE, SET_SERBIAN_LANGUAGE } from '../../../store/actions';
+import { SET_ENGLISH_LANGUAGE_SAGA, SET_SERBIAN_LANGUAGE_SAGA } from '../../../store/actions';
 import SerbianFlag from '../../../assets/images/rs.png';
 import EnglishFlag from '../../../assets/images/uk.png';
 
@@ -39,8 +39,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
    return {
-      setSerbianLanguage: () => dispatch({ type: SET_SERBIAN_LANGUAGE }),
-      setEnglishLanguage: () => dispatch({ type: SET_ENGLISH_LANGUAGE })
+      setSerbianLanguage: () => dispatch({ type: SET_SERBIAN_LANGUAGE_SAGA }),
+      setEnglishLanguage: () => dispatch({ type: SET_ENGLISH_LANGUAGE_SAGA })
    }
 }
 

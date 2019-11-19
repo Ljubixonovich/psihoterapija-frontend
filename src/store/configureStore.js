@@ -1,12 +1,11 @@
 import { createStore,  compose, applyMiddleware, combineReducers } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 
-import { PersonReducer, UIReducer, LanguageReducer } from './reducers/';
+import { UIReducer, LanguageReducer } from './reducers/';
 import rootSaga from './sagas';
 
 
 const rootReducer = combineReducers({
-   persons: PersonReducer,
    ui: UIReducer,
    language: LanguageReducer
 });
