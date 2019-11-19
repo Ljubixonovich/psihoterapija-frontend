@@ -6,12 +6,15 @@ import * as serviceWorker from './utils/serviceWorker';
 import App from './App';
 import store from './store/configureStore';
 import './assets/styles/index.css';
+import LanguageContextProvider from './contexts/LanguageContext';
 
 const app = (
    <Provider store={store}>
-      <BrowserRouter>
-         <App />
-      </BrowserRouter>   
+      <LanguageContextProvider>
+         <BrowserRouter>
+            <App />
+         </BrowserRouter>   
+      </LanguageContextProvider>
    </Provider>
 );
 

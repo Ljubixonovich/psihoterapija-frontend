@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useContext } from 'react';
 import styled from 'styled-components';
 
+import { LanguageContext } from '../../contexts/LanguageContext';
 import { Btn } from '../Btn/Btn';
 import { sendMessageToEmail } from '../../utils/api';
 
@@ -73,6 +74,8 @@ export const SendMailForm = (props) => {
    const inputEmail = useRef(null);
    const inputMessage = useRef(null);
 
+   const { translations:trans } = useContext(LanguageContext).translations;
+
    const onSendMessage = async () => {
       const email = inputEmail.current.value || '';
       const message = inputMessage.current.value || 'prazna poruka';
@@ -101,8 +104,8 @@ export const SendMailForm = (props) => {
       case 'form':
          content = (
             <FormWrapper>
-               <div>Leave your messsage and I will reply to you shortly.</div>
-               <div>E-mail is required only if you want my response.</div>
+               <div>{trans.leaveYourMsg}</div>
+               <div>{trans.emaiReqlResponse}</div>
                <br />
 
                <div className='Form'>
@@ -116,7 +119,7 @@ export const SendMailForm = (props) => {
                   </div>
 
                   <div className='InputWrapper'>
-                     <label>message:</label>
+                     <label>{trans.message}:</label>
                      <textarea
                         className='InputElement'
                         rows="10"
@@ -128,7 +131,7 @@ export const SendMailForm = (props) => {
                   <Btn
                      className='Center'
                      onClick={onSendMessage}
-                  >Send</Btn>
+                  >{trans.send}</Btn>
 
                </div>
             </FormWrapper>
@@ -138,11 +141,11 @@ export const SendMailForm = (props) => {
       case 'error':
          content = (
             <Response display='false'>
-               <h3 className='Center'>There was an error while sending message. Please try again.</h3>
+               <h3 className='Center'>{trans.errorSendingMsg}</h3>
                <Btn
                   className='Center'
                   onClick={onTryAgain}
-               >Try Again</Btn>
+               >{trans.tryAgin}</Btn>
             </Response>
          );
          break;
@@ -151,8 +154,8 @@ export const SendMailForm = (props) => {
       default:
          content = (
             <Response display='false'>
-               <h3 className='Center'>Your message was successfully sent.</h3>
-               <h3 className='Center'>I will reply to you shortly.</h3>
+               <h3 className='Center'>{trans.messageSuccessSend}</h3>
+               <h3 className='Center'>{trans.quickReplay}</h3>
             </Response>
          )
          break;

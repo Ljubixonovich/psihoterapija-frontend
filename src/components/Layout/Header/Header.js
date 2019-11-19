@@ -6,6 +6,7 @@ import { Logo } from '../../Logo/Logo';
 import { DrawerToggle } from '../SideDrawer/DrawerToggle/DrawerToggle';
 import { CloseBtn } from '../SideDrawer/CloseBtn/CloseBtn';
 import image from '../../../assets/images/boje_u_sivom.jpg';
+import LanguagePicker from '../LanguagePicker/LanguagePicker';
 
 const Wrapper = styled.div`
    background-image: url(${image});
@@ -32,7 +33,7 @@ const Wrapper = styled.div`
       ;
    } */
 
-   @media (min-width: 1200px) {
+   @media (min-width: 1400px) {
       grid-template-areas: 
       '. h h h h h h h h h h .'
       ;
@@ -49,10 +50,8 @@ const Wrapper = styled.div`
 
       @media (min-width: 992px) {
          display: flex;
-
-         p {
-            margin: 0 10px;
-         }
+         justify-content: center;
+         align-items: center;
       }
    }
 `;
@@ -67,23 +66,24 @@ const HeaderWrapper = styled.div`
 `;
 
 export const Header = (props) => (
-   <Wrapper>
-      <HeaderWrapper>
-         <Logo />
+      <Wrapper>
+         <HeaderWrapper>
+            <Logo />
 
-         <div>
-            <div className='Nav'>
-               <NavItems />
+            <div>
+               <div className='Nav'>
+                  <NavItems />
+                  <LanguagePicker />
+               </div>
+
+               {props.isModal ?
+                  <CloseBtn onClick={props.onCloseDrawer} /> :
+                  <DrawerToggle
+                     onClick={props.drawerToggleClicked}
+                  />
+               }
             </div>
 
-            {props.isModal ?
-               <CloseBtn onClick={props.onCloseDrawer} /> :
-               <DrawerToggle
-                  onClick={props.drawerToggleClicked}
-               />
-            }
-         </div>
-
-      </HeaderWrapper>
-   </Wrapper>
-)
+         </HeaderWrapper>
+      </Wrapper>
+);

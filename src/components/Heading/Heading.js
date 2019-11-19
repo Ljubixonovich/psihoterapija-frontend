@@ -12,7 +12,7 @@ const Text = styled.span`
     text-align: ${props => props.noTextAlign ? 'left' : 'center' };
     font-style: ${props => props.italic ? 'italic' : 'normal'};
 
-    @media (min-width: 992px) {
+    @media (min-width: 1200px) {
         font-size: 28px;
         text-align: left;
     }

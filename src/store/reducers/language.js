@@ -1,7 +1,7 @@
 import { SET_SERBIAN_LANGUAGE, SET_ENGLISH_LANGUAGE} from '../actions';
 
 const initialState = {
-   language: 'sr'
+   language: 'en'
 };
 
 export const reducer = (state = initialState, action) => {

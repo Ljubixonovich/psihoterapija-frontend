@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 import { Header } from '../Header/Header';
 import { NavItems } from '../NavItems/NavItems';
+import LanguagePicker from '../LanguagePicker/LanguagePicker';
 import { Backdrop } from '../../Backdrop/Backdrop';
 import { Btn } from '../../Btn/Btn';
 import './SideDrawer.css';
@@ -59,6 +60,9 @@ export const SideDrawer = (props) => {
                />
 
                <div className='Nav'>
+               <div className='Center'>
+                  <LanguagePicker />                  
+               </div>
                   <NavItems onClick={props.onCloseDrawer}/>
 
                   <NavLink
