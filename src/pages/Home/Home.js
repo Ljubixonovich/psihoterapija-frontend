@@ -1,7 +1,6 @@
 import React, { useEffect, useContext } from 'react';
 
 import { LanguageContext } from '../../contexts/LanguageContext';
-import { PersonalData } from '../../utils/constants';
 import { awakeBackend } from '../../utils/api';
 
 const Home = (props) => {

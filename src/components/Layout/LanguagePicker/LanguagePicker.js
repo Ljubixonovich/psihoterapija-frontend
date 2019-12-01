@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import { SET_ENGLISH_LANGUAGE_SAGA, SET_SERBIAN_LANGUAGE_SAGA } from '../../../store/actions';
 import SerbianFlag from '../../../assets/images/rs.png';
@@ -20,28 +20,18 @@ const ImageHolder = styled.div`
 `;
 
 const LanguagePicker = (props) => {
+   const language = useSelector(state => state.language.language);
+   const dispatch = useDispatch();
+
    const setLanguage = () => {
-      props.language === 'sr' ?
-         props.setEnglishLanguage() :
-         props.setSerbianLanguage();
+      language === 'sr' ?
+         dispatch({type: SET_ENGLISH_LANGUAGE_SAGA}) :
+         dispatch({type: SET_SERBIAN_LANGUAGE_SAGA});
    }
 
    return (
-      <ImageHolder onClick={setLanguage} language={props.language} />
+      <ImageHolder onClick={setLanguage} language={language} />
    );
 };
 
-const mapStateToProps = (state) => {
-   return {
-      language: state.language.language
-   };
-};
-
-const mapDispatchToProps = dispatch => {
-   return {
-      setSerbianLanguage: () => dispatch({ type: SET_SERBIAN_LANGUAGE_SAGA }),
-      setEnglishLanguage: () => dispatch({ type: SET_ENGLISH_LANGUAGE_SAGA })
-   }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(LanguagePicker);
+export default LanguagePicker;
